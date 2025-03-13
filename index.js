@@ -46,6 +46,7 @@ rl.question('Enter the project name: ', (projectName) => {
     fs.writeFileSync(path.join('models', 'model.js'), templates.getModelContent());
     fs.writeFileSync('.env', templates.getEnvContent());
     fs.writeFileSync('package.json', templates.getPackageJsonContent(projectName, mainFile));
+    fs.writeFileSync('.gitignore', templates.getGitignoreContent());
 
     console.log(`✅ Project setup complete.`);
     rl.close();

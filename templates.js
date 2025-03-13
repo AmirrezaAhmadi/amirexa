@@ -89,6 +89,19 @@ module.exports = mongoose.model('Model', ModelSchema);`;
     return `MONGO_URI=mongodb://localhost:27017/yourdbname
 PORT=3000`;
   }
+
+  function getGitignoreContent() {
+    return `# Node.js dependencies
+  node_modules/
+  .env
+  
+  # Logs
+  npm-debug.log*
+  yarn-debug.log*
+  yarn-error.log*
+  pnpm-debug.log*
+  `;
+  }
   
   function getPackageJsonContent(projectName, mainFile) {
     return JSON.stringify({
@@ -114,5 +127,6 @@ PORT=3000`;
     getViewContent,
     getModelContent,
     getEnvContent,
-    getPackageJsonContent
+    getPackageJsonContent,
+    getGitignoreContent
   };  
