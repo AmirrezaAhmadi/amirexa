@@ -2,33 +2,33 @@
 
 const fs = require('fs');
 const path = require('path');
-const { Command } = require('commander');
+const readline = require('readline');
 const templates = require('./templates');
 
-const program = new Command();
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-program
-  .version('1.0.0')
-  .description('Generate an Express.js project structure')
-  .argument('<projectName>', 'Project name')
-  .option('-m, --main <filename>', 'Main file name', 'app')
-  .action((projectName, options) => {
-    projectName = projectName.trim();
-    if (!projectName) {
-      console.error('❌ Project name cannot be empty.');
-      process.exit(1);
-    }
+rl.question('Enter the project name: ', (projectName) => {
+  projectName = projectName.trim();
+  if (!projectName) {
+    console.error('❌ Project name cannot be empty.');
+    rl.close();
+    return;
+  }
 
-    if (!fs.existsSync(projectName)) {
-      fs.mkdirSync(projectName);
-      console.log(`📁 Project "${projectName}" created.`);
-    } else {
-      console.log(`⚠️ Project "${projectName}" already exists.`);
-    }
+  if (!fs.existsSync(projectName)) {
+    fs.mkdirSync(projectName);
+    console.log(`📁 Project "${projectName}" created.`);
+  } else {
+    console.log(`⚠️ Project "${projectName}" already exists.`);
+  }
 
-    process.chdir(projectName);
+  process.chdir(projectName);
 
-    const mainFile = `${options.main}.js`;
+  rl.question('Enter the main file name (default: app): ', (mainFileName) => {
+    const mainFile = `${(mainFileName.trim() || 'app')}.js`;
     const folders = ['routes', 'config', 'controllers', 'views', 'models'];
 
     folders.forEach(folder => {
@@ -48,6 +48,6 @@ program
     fs.writeFileSync('package.json', templates.getPackageJsonContent(projectName, mainFile));
 
     console.log(`✅ Project setup complete.`);
+    rl.close();
   });
-
-program.parse(process.argv);
+});
