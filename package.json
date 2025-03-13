@@ -1,0 +1,18 @@
+{
+  "name": "nodeforge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "create-app": "bin/bin.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "commander": "^10.0.0"
+  },
+  "keywords": ["cli", "express", "generator", "nodejs"],
+  "author": "AmirrezaAhmadi  AmirrezaAhamdi.GH@gmail.com",
+  "license": "MIT",
+  "description": "A CLI tool to generate Express.js project structure"
+}
