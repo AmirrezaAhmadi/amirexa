@@ -92,14 +92,14 @@ PORT=3000`;
 
   function getGitignoreContent() {
     return `# Node.js dependencies
-  node_modules/
-  .env
+node_modules/
+.env
   
-  # Logs
-  npm-debug.log*
-  yarn-debug.log*
-  yarn-error.log*
-  pnpm-debug.log*
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
   `;
   }
   

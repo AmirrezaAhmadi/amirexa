@@ -1,9 +1,9 @@
 {
   "name": "amirexa",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "index.js",
   "bin": {
-    "create-app": "bin/bin.js"
+    "create-app": "./bin/bin.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
   "dependencies": {
   },
   "keywords": ["cli", "express", "generator", "nodejs"],
-  "author": "AmirrezaAhmadi  AmirrezaAhamdi.GH@gmail.com",
+  "author": "Amirreza Ahmadi <AmirrezaAhamdi.GH@gmail.com>",
   "license": "MIT",
   "description": "A CLI tool to generate Express.js project structure"
 }
