@@ -1,5 +1,5 @@
 {
-  "name": "amirexa",
+  "name": "@amirrezaahmadi/amirexa",
   "version": "1.0.3",
   "main": "index.js",
   "bin": {
@@ -8,10 +8,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "keywords": ["cli", "express", "generator", "nodejs"],
   "author": "Amirreza Ahmadi <AmirrezaAhamdi.GH@gmail.com>",
   "license": "MIT",
-  "description": "A CLI tool to generate Express.js project structure"
+  "description": "A CLI tool to generate Express.js project structure",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amirrezaahmadi/amirexa.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }
